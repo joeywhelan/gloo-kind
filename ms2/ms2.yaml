@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ms2-app
+  name: ms2-app
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: ms2-app
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: ms2-app
+    spec:
+      containers:
+      - image: ms2:1.0
+        name: ms2-app
+        ports:
+        - containerPort: 8000
+          name: http
+        resources:
+          requests:
+            cpu: "250m"
+            memory: "256Mi"
+          limits:
+            cpu: "250m"
+            memory: "256Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms2-service
+  namespace: default
+  labels:
+    service: ms2-service
+spec:
+  ports:
+  - name: http
+    port: 9000
+    protocol: TCP
+  selector:
+    app: ms2-app
