@@ -11,6 +11,7 @@
 This demonstrates integration of the solo.io GlooGateway on a Kind k8s cluster.  
 
 ## Architecture <a name="architecture"></a>
+![architecture](https://docs.google.com/drawings/d/e/2PACX-1vTc1I5hKZaVLpuvsO_gVJFHFMyIJ0yWTwVY4QLuZOpFSPD58sPcUzHqKvm3e_jSeylcvQ9USHxQ0HBV/pub?w=852&h=607)
 
 
 ## Approach <a name="approach"></a>
