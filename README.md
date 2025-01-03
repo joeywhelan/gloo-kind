@@ -20,17 +20,22 @@ This demonstrates integration of the solo.io GlooGateway on a Kind k8s cluster.
 - GlooGateway (OSS) is deployed
 - 2 simplistic Nodejs microservices are deployed with 3 replicas per
 - GlooGateway routes are created to the 2 Nodejs service endpoints
+- Separate Gloo implementations with the Edge and K8s Gateway APIs
 
 ## Prerequisites <a name="prerequisites"></a>
 - Docker
 - Kind
 
 ## Usage <a name="usage"></a>
-### Start up
+### Start up: Edge API
 ```bash
-./start.sh
+./start-edge.sh
 ```
-### Shutdown
+### Start up: Gateway API
+```bash
+./start-gwy.sh
+```
+### Shutdown:  Both
 ```bash
 ./stop.sh
 ```
